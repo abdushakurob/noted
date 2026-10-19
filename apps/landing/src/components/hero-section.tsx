@@ -26,7 +26,7 @@ export function HeroSection() {
             Start building for free
             <span aria-hidden>→</span>
           </a>
-          <a href="#workspace" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
+          <a href="/#workspace" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
             Explore the platform
           </a>
         </div>

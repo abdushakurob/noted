@@ -1,8 +1,7 @@
-/** Update when the public repo URL is set. */
-export const GITHUB_URL = "https://github.com/search?q=note%27d+freelancer+capture&type=repositories";
+export const GITHUB_URL = "https://github.com/abdushakurob/noted";
 export const DEMO_PATH = "/demo";
-
-export const DOCS = {
-  quickstart: "/docs/GETTING-STARTED.md",
-  userGuide: "/docs/USER-GUIDE.md",
-} as const;
+export const DOCS_PATH = "/docs";
+export const GUIDE_URL =
+  "https://github.com/abdushakurob/noted/blob/master/docs/USER-GUIDE.md";
+export const START_URL =
+  "https://github.com/abdushakurob/noted/blob/master/docs/GETTING-STARTED.md";

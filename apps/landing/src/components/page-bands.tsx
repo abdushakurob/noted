@@ -84,8 +84,8 @@ export function BuildBand() {
           <p className="mt-4 text-[15px] text-foreground">
             Your agent gets the context. You stay in flow.
           </p>
-          <a href="#agents" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
-            Explore browser development →
+          <a href="/docs" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
+            Read the setup →
           </a>
         </article>
         <article id="agents">
@@ -104,8 +104,8 @@ export function BuildBand() {
             Whether you&apos;re building with Claude Code, Cursor, Codex, or other
             supported agents, your workflow stays connected.
           </p>
-          <a href="#stack" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
-            Explore agent integrations →
+          <a href="/docs#cursor" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
+            How Cursor connects →
           </a>
         </article>
       </div>
@@ -148,8 +148,8 @@ export function ShareBand() {
             Your application stays on your machine. Your team stays connected.
           </p>
         </div>
-        <a href="#pricing" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
-          Explore live previews →
+        <a href="/#pricing" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
+          See the proposal →
         </a>
       </div>
       <div className="mt-16 overflow-hidden rounded-[28px] border border-border bg-background">
@@ -412,17 +412,15 @@ const plans = [
     name: "Free",
     price: "$0",
     unit: "/ month",
-    lede: "Everything you need to bring your development workflow together.",
+    lede: "The local loop. Nothing here is billed.",
     items: [
-      "Unlimited local projects",
-      "Browser-native development",
-      "MCP coding agent connections",
-      "Context-aware development requests",
-      "Local activity history",
-      "1 active live preview",
-      "Personal workspace",
+      "Capture on a running page",
+      "Measurements stay on this computer",
+      "Optional local model",
+      "Cursor connection",
+      "Task history on your machine",
     ],
-    cta: "Start for free",
+    cta: "Try the demo",
     href: DEMO_PATH,
   },
   {
@@ -440,8 +438,7 @@ const plans = [
       "Project sharing",
       "Priority support",
     ],
-    cta: "Get Pro",
-    href: DEMO_PATH,
+    cta: "Planned",
   },
   {
     name: "Team",
@@ -458,8 +455,7 @@ const plans = [
       "Team-wide history",
       "GitHub workflow integrations",
     ],
-    cta: "Start with Team",
-    href: DEMO_PATH,
+    cta: "Planned",
   },
   {
     name: "Enterprise",
@@ -474,8 +470,7 @@ const plans = [
       "Extended audit history",
       "Dedicated onboarding and support",
     ],
-    cta: "Contact sales",
-    href: DEMO_PATH,
+    cta: "Planned",
   },
 ];
 
@@ -486,8 +481,7 @@ export function PricingBand() {
         Pricing that grows with your ambition.
       </h2>
       <p className="mt-4 max-w-[36rem] text-[15px] leading-7 text-muted-foreground">
-        Start building for free. Scale when you&apos;re ready. Simple, transparent
-        plans for developers and teams of every size.
+        The local loop is free. The other prices are a proposal, not something you can buy.
       </p>
       <div className="mt-14 grid gap-10 lg:grid-cols-12">
         {plans.map((plan) => (
@@ -513,15 +507,16 @@ export function PricingBand() {
                 </li>
               ))}
             </ul>
-            <a
-              href={plan.href}
-              className={cn(
-                buttonVariants({ variant: plan.name === "Pro" ? "accent" : "outline" }),
-                "mt-6 w-fit",
-              )}
-            >
-              {plan.cta}
-            </a>
+            {"href" in plan && plan.href ? (
+              <a
+                href={plan.href}
+                className={cn(buttonVariants({ variant: "accent" }), "mt-6 w-fit")}
+              >
+                {plan.cta}
+              </a>
+            ) : (
+              <p className="mt-6 text-sm text-muted-foreground">{plan.cta}</p>
+            )}
           </article>
         ))}
       </div>
@@ -533,13 +528,13 @@ export function PricingBand() {
 }
 
 const faqs = [
-  ["What is note’d?", "note’d is a connected development workspace that brings your running web applications, coding agents, and collaborators together. It helps you build directly from the browser, share local applications, and move feedback into development work."],
-  ["Can I use note’d with my existing coding agent?", "note’d is designed to work with popular AI coding agents through MCP and supported integrations, including Claude Code, Cursor, and Codex."],
-  ["Can other people access my localhost?", "Yes. Live previews are designed to let you securely share locally running applications with invited reviewers through a browser-accessible link."],
-  ["Do my teammates need to install note’d?", "Reviewers can participate in hosted review sessions through their browsers. Developers use note’d's local integration to connect applications and coding agents."],
-  ["Can clients and testers leave feedback?", "Yes. Reviewers can identify issues and suggest changes directly within the application. note’d preserves relevant context so developers can act on the feedback."],
-  ["Does note’d work with my existing projects?", "note’d is designed to connect with running web applications and existing development workflows, regardless of the framework used to build them."],
-  ["Can I use note’d on my own?", "Absolutely. The personal workspace lets individual developers interact with their running applications and connected coding agents. Collaboration becomes available whenever they need it."],
+  ["What is note’d?", "You point at something in a running page and say what should change. note’d keeps the measurement on your computer and turns it into a task Cursor can read."],
+  ["Can I use note’d with my existing coding agent?", "Cursor works today. After you approve a task, Cursor reads it from the local connection. Other agents are not set up in this build."],
+  ["Can other people access my localhost?", "No. The page and the task stay on your machine. A shareable preview is planned, and it is not available yet."],
+  ["Do my teammates need to install note’d?", "The public demo needs no install. The local loop is for the person running the page. There is no shared review session yet."],
+  ["Can clients and testers leave feedback?", "On the demo, yes. On your own app, you run the capture locally. A client cannot open your localhost yet."],
+  ["Does note’d work with my existing projects?", "Yes, if the project is a running web page. Load the capture script, point at an element, and the measurement stays local. React and Vue pages can include the component name."],
+  ["Can I use note’d on my own?", "Yes. That is the product today: one person, a running page, and an optional local model."],
 ];
 
 export function FaqBand() {
@@ -579,7 +574,7 @@ export function CloseBand() {
           <a href={DEMO_PATH} className={cn(buttonVariants({ variant: "accent", size: "lg" }))}>
             Try the demo →
           </a>
-          <a href="#workspace" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
+          <a href="/#workspace" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
             Explore note’d
           </a>
         </div>

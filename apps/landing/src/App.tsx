@@ -14,12 +14,14 @@ import {
 } from "@/components/page-bands";
 import { HeroSection } from "@/components/hero-section";
 import { DemoPage } from "@/demo/demo-page";
+import { DocsPage } from "@/docs/docs-page";
 import SiteFooter from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export default function App() {
   const path = window.location.pathname.replace(/\/$/, "") || "/";
   if (path === "/demo") return <DemoPage />;
+  if (path === "/docs") return <DocsPage />;
 
   return (
     <div className="flex min-h-dvh flex-col">
