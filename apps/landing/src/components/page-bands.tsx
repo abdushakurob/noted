@@ -84,8 +84,8 @@ export function BuildBand() {
           <p className="mt-4 text-[15px] text-foreground">
             Your agent gets the context. You stay in flow.
           </p>
-          <a href="/docs" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
-            Read the setup →
+          <a href="/docs/install" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
+            Install it →
           </a>
         </article>
         <article id="agents">
@@ -104,8 +104,8 @@ export function BuildBand() {
             Whether you&apos;re building with Claude Code, Cursor, Codex, or other
             supported agents, your workflow stays connected.
           </p>
-          <a href="/docs#cursor" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
-            How Cursor connects →
+          <a href="/docs/cursor" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
+            Connect Cursor →
           </a>
         </article>
       </div>
@@ -148,8 +148,8 @@ export function ShareBand() {
             Your application stays on your machine. Your team stays connected.
           </p>
         </div>
-        <a href="/#pricing" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
-          See the proposal →
+        <a href="/docs/limits" className="mt-6 inline-flex text-sm font-medium underline decoration-border underline-offset-4">
+          What you can use today →
         </a>
       </div>
       <div className="mt-16 overflow-hidden rounded-[28px] border border-border bg-background">
@@ -400,8 +400,8 @@ export function StagesBand() {
           </li>
         ))}
       </ol>
-      <a href={DEMO_PATH} className={cn(buttonVariants({ variant: "accent" }), "mt-4")}>
-        Start building →
+      <a href="/docs/install" className={cn(buttonVariants({ variant: "accent" }), "mt-4")}>
+        Install it →
       </a>
     </Band>
   );
@@ -574,8 +574,8 @@ export function CloseBand() {
           <a href={DEMO_PATH} className={cn(buttonVariants({ variant: "accent", size: "lg" }))}>
             Try the demo →
           </a>
-          <a href="/#workspace" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
-            Explore note’d
+          <a href="/docs" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
+            Read the docs
           </a>
         </div>
       </div>

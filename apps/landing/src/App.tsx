@@ -21,7 +21,7 @@ import { SiteHeader } from "@/components/site-header";
 export default function App() {
   const path = window.location.pathname.replace(/\/$/, "") || "/";
   if (path === "/demo") return <DemoPage />;
-  if (path === "/docs") return <DocsPage />;
+  if (path === "/docs" || path.startsWith("/docs/")) return <DocsPage path={path} />;
 
   return (
     <div className="flex min-h-dvh flex-col">

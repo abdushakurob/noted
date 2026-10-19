@@ -1,6 +1,6 @@
 import { ProductFrame } from "@/components/product-frame";
 import { buttonVariants } from "@/components/ui/button";
-import { DEMO_PATH } from "@/lib/site-config";
+import { DOCS_PATH } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
 export function HeroSection() {
@@ -22,12 +22,12 @@ export function HeroSection() {
           the world, and turn every piece of feedback into meaningful progress.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a href={DEMO_PATH} className={cn(buttonVariants({ variant: "accent", size: "lg" }))}>
+          <a href={`${DOCS_PATH}/install`} className={cn(buttonVariants({ variant: "accent", size: "lg" }))}>
             Start building for free
             <span aria-hidden>→</span>
           </a>
-          <a href="/#workspace" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
-            Explore the platform
+          <a href="/docs" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
+            Read the docs
           </a>
         </div>
         <p className="mt-6 text-sm text-muted-foreground">
