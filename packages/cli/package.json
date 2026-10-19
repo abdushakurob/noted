@@ -1,0 +1,21 @@
+{
+  "name": "@noted/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "noted": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/cli.js start",
+    "doctor": "node dist/cli.js doctor"
+  },
+  "dependencies": {
+    "@noted/daemon": "workspace:*",
+    "tsx": "^4.19.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^5.8.2"
+  }
+}

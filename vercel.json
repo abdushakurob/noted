@@ -1,0 +1,5 @@
+{
+  "buildCommand": "pnpm --filter @noted/landing build",
+  "outputDirectory": "apps/landing/dist",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}

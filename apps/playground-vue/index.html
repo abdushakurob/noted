@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Bakery — note'd demo</title>
+    <script src="http://127.0.0.1:3737/noted.js" defer></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        window.Noted?.init({ baseUrl: "http://127.0.0.1:3737" });
+      });
+    </script>
+  </body>
+</html>

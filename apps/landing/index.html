@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="note’d is a connected development workspace. Build from the browser, share localhost, and turn feedback into work for your coding agent."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <title>note’d — Everything you need to build better, together.</title>
+    <script>
+      (function () {
+        var k = "noted-landing-theme";
+        var t = localStorage.getItem(k);
+        var dark =
+          t === "dark" ||
+          (t !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+        if (dark) document.documentElement.classList.add("dark");
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

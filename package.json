@@ -1,0 +1,30 @@
+{
+  "name": "noted",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "test": "pnpm --filter @noted/shared --filter @noted/daemon test",
+    "dev": "pnpm --filter @noted/landing dev",
+    "dev:landing": "pnpm --filter @noted/landing dev",
+    "demo": "pnpm --filter @noted/landing dev",
+    "dev:panel": "pnpm --filter @noted/panel dev",
+    "dev:playground": "pnpm --filter @noted/playground-react dev",
+    "dev:stack": "node scripts/dev-stack.mjs",
+    "noted": "pnpm --filter @noted/cli run start",
+    "noted:kill": "node scripts/kill-daemon.mjs",
+    "noted:restart": "node scripts/kill-daemon.mjs && pnpm noted",
+    "noted:doctor": "pnpm --filter @noted/cli run doctor",
+    "lint": "pnpm -r run lint --if-present"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.26.1",
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
